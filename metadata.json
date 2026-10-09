@@ -1,0 +1,6 @@
+{
+  "name": "FlowFiles - Modern Windows File Manager",
+  "description": "A fast, polished, open-source alternative to Windows File Explorer with tabs, dual-pane layout, command palette, and desktop-grade filesystem architecture.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

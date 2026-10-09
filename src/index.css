@@ -1,0 +1,279 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI Variable Text", "Segoe UI", system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', "Cascadia Code", Consolas, monospace;
+    --color-slate-750: #334155;
+  }
+
+  html:not(.dark) {
+    color-scheme: light;
+    --color-slate-50: #020617;
+    --color-slate-100: #0f172a;
+    --color-slate-200: #1e293b;
+    --color-slate-300: #334155;
+    --color-slate-400: #475569;
+    --color-slate-500: #64748b;
+    --color-slate-600: #94a3b8;
+    --color-slate-700: #cbd5e1;
+    --color-slate-800: #e2e8f0;
+    --color-slate-900: #f1f5f9;
+    --color-slate-950: #f8fafc;
+    --color-slate-750: #dbe3ec;
+    --app-background: #f8fafc;
+    --app-panel: #f1f5f9;
+    --app-border: #cbd5e1;
+    --app-text: #0f172a;
+    --app-muted-text: #475569;
+    --app-hover-background: #e2e8f0;
+    --app-selected-background: color-mix(in srgb, var(--color-sky-500) 18%, white);
+    --app-selected-border: color-mix(in srgb, var(--color-sky-700) 55%, white);
+    --app-focus-color: var(--color-sky-700);
+    --app-disabled-text: #64748b;
+  }
+
+  html[data-accent='purple'] {
+    --color-sky-50: #faf5ff;
+    --color-sky-100: #f3e8ff;
+    --color-sky-200: #e9d5ff;
+    --color-sky-300: #d8b4fe;
+    --color-sky-400: #c084fc;
+    --color-sky-500: #a855f7;
+    --color-sky-600: #9333ea;
+    --color-sky-700: #7e22ce;
+    --color-sky-800: #6b21a8;
+    --color-sky-900: #581c87;
+    --color-sky-950: #3b0764;
+  }
+
+  html[data-accent='emerald'] {
+    --color-sky-50: #ecfdf5;
+    --color-sky-100: #d1fae5;
+    --color-sky-200: #a7f3d0;
+    --color-sky-300: #6ee7b7;
+    --color-sky-400: #34d399;
+    --color-sky-500: #10b981;
+    --color-sky-600: #059669;
+    --color-sky-700: #047857;
+    --color-sky-800: #065f46;
+    --color-sky-900: #064e3b;
+    --color-sky-950: #022c22;
+  }
+
+  html[data-accent='amber'] {
+    --color-sky-50: #fffbeb;
+    --color-sky-100: #fef3c7;
+    --color-sky-200: #fde68a;
+    --color-sky-300: #fcd34d;
+    --color-sky-400: #fbbf24;
+    --color-sky-500: #f59e0b;
+    --color-sky-600: #d97706;
+    --color-sky-700: #b45309;
+    --color-sky-800: #92400e;
+    --color-sky-900: #78350f;
+    --color-sky-950: #451a03;
+  }
+  
+  body {
+    font-family: var(--font-sans);
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  html[data-compact-density='true'] .file-entry-row {
+    padding-block: 0.125rem;
+  }
+
+  html:not(.dark) {
+    color-scheme: light;
+  }
+
+  html.dark {
+    color-scheme: dark;
+  }
+
+  html:not(.dark),
+  html:not(.dark) body {
+    background-color: var(--app-background);
+    color: var(--app-text);
+  }
+}
+
+html:not(.dark) [class*="hover:bg-slate-"]:hover:not(:disabled) {
+  background-color: var(--app-hover-background);
+}
+
+html:not(.dark) [class*="hover:bg-slate-"]:active:not(:disabled) {
+  background-color: var(--app-selected-background);
+  color: var(--color-sky-900);
+}
+
+html:not(.dark) [class*="hover:text-white"]:hover:not([class*="hover:bg-red-"]) {
+  color: var(--app-text);
+}
+
+html:not(.dark) [class~="bg-sky-500/20"] {
+  background-color: var(--app-selected-background);
+  border-color: var(--app-selected-border);
+  color: var(--color-sky-900);
+  box-shadow: inset 2px 0 var(--app-focus-color);
+}
+
+html:not(.dark) [class~="bg-sky-500/20"] svg {
+  color: var(--app-focus-color);
+}
+
+html:not(.dark) [class*="bg-sky-600/2"] {
+  background-color: var(--app-selected-background);
+  border-color: var(--app-selected-border);
+  color: var(--color-sky-900);
+}
+
+html:not(.dark) [class*="bg-sky-600/2"]:hover {
+  background-color: var(--app-selected-background);
+}
+
+html:not(.dark) [class*="bg-sky-500/30"] {
+  background-color: var(--app-selected-background);
+  border-color: var(--app-selected-border);
+}
+
+html:not(.dark) [class~="command-palette-item"][data-selected="true"] {
+  background-color: var(--app-selected-background);
+  border: 1px solid var(--app-selected-border);
+  color: var(--color-sky-900);
+}
+
+html:not(.dark) [class~="text-sky-200"],
+html:not(.dark) [class~="text-sky-300"],
+html:not(.dark) [class~="text-sky-400"] {
+  color: var(--color-sky-800);
+}
+
+html:not(.dark) [class~="text-purple-200"],
+html:not(.dark) [class~="text-purple-300"],
+html:not(.dark) [class~="text-purple-400"] {
+  color: var(--color-purple-800);
+}
+
+html:not(.dark) [class~="text-emerald-200"],
+html:not(.dark) [class~="text-emerald-300"],
+html:not(.dark) [class~="text-emerald-400"] {
+  color: var(--color-emerald-800);
+}
+
+html:not(.dark) [class~="text-amber-200"],
+html:not(.dark) [class~="text-amber-300"],
+html:not(.dark) [class~="text-amber-400"] {
+  color: var(--color-amber-800);
+}
+
+html:not(.dark) [class~="text-rose-200"],
+html:not(.dark) [class~="text-rose-300"],
+html:not(.dark) [class~="text-rose-400"] {
+  color: var(--color-rose-800);
+}
+
+html:not(.dark) [class~="text-red-200"],
+html:not(.dark) [class~="text-red-300"],
+html:not(.dark) [class~="text-red-400"] {
+  color: var(--color-red-800);
+}
+
+html:not(.dark) [class~="text-blue-200"],
+html:not(.dark) [class~="text-blue-300"],
+html:not(.dark) [class~="text-blue-400"] {
+  color: var(--color-blue-800);
+}
+
+html:not(.dark) [class~="text-cyan-200"],
+html:not(.dark) [class~="text-cyan-300"],
+html:not(.dark) [class~="text-cyan-400"] {
+  color: var(--color-cyan-800);
+}
+
+html:not(.dark) [class~="text-pink-200"],
+html:not(.dark) [class~="text-pink-300"],
+html:not(.dark) [class~="text-pink-400"] {
+  color: var(--color-pink-800);
+}
+
+html:not(.dark) .titlebar-tab[data-active="true"] {
+  background-color: var(--app-panel);
+  border-color: var(--app-border);
+  color: var(--app-text);
+}
+
+html:not(.dark) .titlebar-tab[data-active="true"] svg {
+  color: var(--app-focus-color);
+}
+
+html:not(.dark) .titlebar-tab[data-active="true"] [class~="bg-sky-500"] {
+  background-color: var(--app-focus-color);
+}
+
+html:not(.dark) [data-status-control][data-active="true"] {
+  background-color: var(--app-selected-background);
+  color: var(--app-focus-color);
+}
+
+html:not(.dark) .context-menu-item-primary {
+  color: var(--app-text);
+}
+
+html:not(.dark) :disabled {
+  color: var(--app-disabled-text);
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+:focus-visible {
+  outline: 2px solid var(--app-focus-color, var(--color-sky-400));
+  outline-offset: 2px;
+}
+
+/* Custom desktop scrollbar styling */
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.25);
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.45);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+/* Light mode scrollbar */
+html:not(.dark) ::-webkit-scrollbar-thumb {
+  background: rgba(71, 85, 105, 0.38);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+html:not(.dark) ::-webkit-scrollbar-thumb:hover {
+  background: rgba(71, 85, 105, 0.62);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+/* Hide native arrows on number inputs */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
