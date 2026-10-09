@@ -1,38 +1,63 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# FlowFiles
 
-# Run and deploy your AI Studio app
+**A modern Windows file manager built with React, TypeScript, and Tauri.**
 
-This contains everything you need to run your app locally.
+FlowFiles is an open-source desktop file manager project designed to provide a modern interface for managing files on Windows.
 
-View your app in AI Studio: https://ai.studio/apps/ffa3eee5-c74c-4276-b818-8bb7305a6951
+## ✨ Features
 
-## Run Locally
+- Modern desktop interface
+- File browsing and navigation
+- File search and filtering
+- Context menus for file operations
+- File properties and details
+- Customizable application settings
 
-**Prerequisites:**  Node.js
+## 🛠️ Tech Stack
 
+- React
+- TypeScript
+- Vite
+- Tauri
+- Rust
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## 🚀 Getting Started
 
-## Filesystem modes
+### Prerequisites
 
-- Browser preview uses an in-memory demo filesystem.
-- The Windows desktop app (`npx tauri dev`) lists Windows drives and reads real directories through the Rust backend.
-- Native filesystem access is read-only for now; creating, copying, moving, renaming, and deleting files are not implemented.
+- Node.js and npm
+- Rust toolchain
+- Tauri development prerequisites for Windows
 
-## Windows desktop builds
+### Installation
 
-From the project root, use these commands to run or build the Tauri desktop app:
+Clone the repository:
 
-```sh
-npm run build
-npx tauri dev
-npx tauri build
+```bash
+git clone https://github.com/Ghostkazuha/FlowFiles.git
+cd FlowFiles
 ```
 
-`npx tauri build` creates the Windows desktop application and installer.
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development application:
+
+```bash
+npm run tauri dev
+```
+
+## 📄 License
+
+This project is licensed under the MIT License. See the `LICENSE` file for details.
+
+## 🤝 Contributing
+
+Contributions, bug reports, and suggestions are welcome!
+
+---
+
+Made cause the file explorer crashes
